@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.note-div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: auto;
+    /* align-items: left; */
+    justify-content: left;
+
+
+}
+.note-card {
+    margin: 2rem;
+    width: 240px;
+    height: 180px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px; 
+    font-family:'Poppins';
+    background-color: #f8d4c4;
+    border: 1px solid #dfa890;
+    box-shadow: 7px 7px 15px 0.1px #906552;
+}
+
+.note-card .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+
+}
+.note-card .header button{
+    padding: 0 0.6rem;
+    margin: 0 .2rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    border: none;
+    background-color: #f8d4c4;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.note-card .card-content {
+    padding: 1rem;
+}
+.note-card h2 {
+    padding-top: 0.5rem;
+    padding-left: 0.8rem;
+    font-family:'Marhey', cursive;
+}
