@@ -27,12 +27,12 @@ function Notes(props) {
                 <div className="note-card" onClick={() => { openNote(note) }}>
                     <div className="header">
                         <h2>{note.title}</h2>
-                        <button onClick={(event) => {
+                        {/* <button onClick={(event) => {
                             event.stopPropagation();
                             deleteNote(note);
                         }}>
                             x
-                        </button>
+                        </button> */}
                     </div>
                     <div className="card-content">
                         <p>{note.text}</p>
