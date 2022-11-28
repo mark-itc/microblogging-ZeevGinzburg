@@ -5,11 +5,13 @@
 }
 .note-div {
     position: absolute;
+    top: 205px;
     left: 367px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: auto;
+    padding-top: 15px;
+    /* padding: auto; */
     /* align-items: left; */
     justify-content: left;
     font-family: 'Roboto', sans-serif;
@@ -19,7 +21,7 @@
 
 }
 .note-card {
-    margin: 2rem;
+    margin-bottom: 15px;
     width: 600px;
     padding: 0;
     display: flex;

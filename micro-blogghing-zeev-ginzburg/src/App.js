@@ -3,6 +3,12 @@ import Notes from './components/notes';
 import Form from './components/form';
 import { useState } from "react";
 
+// localStorage.setItem("twit", JSON.stringify(t))
+// const t1 = JSON.parse(localStorage.getItem("twit"))
+// aplication localstorage
+
+
+
 function App() {
   const [noteItems, setNoteItems] = useState([]);
   const [opened, setOpened] = useState(null);
@@ -23,28 +29,28 @@ function App() {
     setOpened(noteToOpen);
   }
 
-  const modal = () => {
-    if (opened) {
-      return (
-        <div className={`modal`}>
-          <div className='modal-content'>
-            <div className='header'>
-              <h2>{opened.title}</h2>
-              <button onClick={() => { setOpened(null) }}>x</button>
-            </div>
-            <p>{opened.text}</p>
-            {/* <p>{`note date: ${humanReadebleDate(note.date)}`}</p> */}
-          </div>
-      </div>
-      )
-    }
-  }
+  // const modal = () => {
+  //   if (opened) {
+  //     return (
+  //       <div className={`modal`}>
+  //         <div className='modal-content'>
+  //           <div className='header'>
+  //             <h2>{opened.title}</h2>
+  //             <button onClick={() => { setOpened(null) }}>x</button>
+  //           </div>
+  //           <p>{opened.text}</p>
+  //           {/* <p>{`note date: ${humanReadebleDate(note.date)}`}</p> */}
+  //         </div>
+  //     </div>
+  //     )
+  //   }
+  // }
 
   return (
     <div className="App">
       <Form addNewNote={addNewNote} />
       <Notes noteItems={noteItems} deleteNote={deleteNote} openNote={openNote}/>
-      {modal()}
+      {/* {modal()} */}
     </div>
   );
 }

@@ -2,12 +2,12 @@ import { useState } from "react";
 import "./buttons.css";
 
 function AddButton(props) {
-    const {addNewNote} = props;
+    const {addNewNote, tweetText} = props;
 
     function addNote(e) {
         e.preventDefault();
         const newNoteItem = {
-            text:`Example Note`,
+            text: tweetText,
             date: new Date(),
             title: `user-name: Zeev Ginzburg`
         };
@@ -16,7 +16,7 @@ function AddButton(props) {
 
     return (
         <>
-            <button className="add-button" onClick={addNote}>Tweet</button>
+            <button disabled={tweetText.length >= 140} className="add-button" onClick={addNote}>Tweet</button>
         </>
     )
 
