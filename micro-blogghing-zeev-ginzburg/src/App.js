@@ -1,5 +1,5 @@
 import './App.css';
-import Notes from './components/notes';
+import Tweets from './components/tweets';
 import Form from './components/form';
 import { useState } from "react";
 
@@ -10,47 +10,30 @@ import { useState } from "react";
 
 
 function App() {
-  const [noteItems, setNoteItems] = useState([]);
+  const [tweetItems, setTweetItems] = useState([]);
   const [opened, setOpened] = useState(null);
-  const addNewNote = (newNoteItem) => {
-    setNoteItems([...noteItems, newNoteItem]);
+  const addNewTweet = (newTweetItem) => {
+    setTweetItems([...tweetItems, newTweetItem]);
   }
 
-  const deleteNote = (noteToDelete) => {
-    setNoteItems(noteItems.filter((note) => {
-      if (note === noteToDelete) {
+  const deleteTweet = (tweetToDelete) => {
+    setTweetItems(tweetItems.filter((tweet) => {
+      if (tweet === tweetToDelete) {
         return false;
       }
       else return true;
     }));
   }
 
-  const openNote = (noteToOpen) => {
-    setOpened(noteToOpen);
+  const openTweet = (tweetToOpen) => {
+    setOpened(tweetToOpen);
   }
 
-  // const modal = () => {
-  //   if (opened) {
-  //     return (
-  //       <div className={`modal`}>
-  //         <div className='modal-content'>
-  //           <div className='header'>
-  //             <h2>{opened.title}</h2>
-  //             <button onClick={() => { setOpened(null) }}>x</button>
-  //           </div>
-  //           <p>{opened.text}</p>
-  //           {/* <p>{`note date: ${humanReadebleDate(note.date)}`}</p> */}
-  //         </div>
-  //     </div>
-  //     )
-  //   }
-  // }
 
   return (
     <div className="App">
-      <Form addNewNote={addNewNote} />
-      <Notes noteItems={noteItems} deleteNote={deleteNote} openNote={openNote}/>
-      {/* {modal()} */}
+      <Form addNewTweet={addNewTweet}  />
+      <Tweets tweetItems={tweetItems} deleteTweet={deleteTweet} openTweet={openTweet}/>
     </div>
   );
 }
