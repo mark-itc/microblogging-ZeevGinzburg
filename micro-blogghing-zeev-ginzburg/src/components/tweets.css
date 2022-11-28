@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
 }
-.note-div {
+.tweet-div {
     position: absolute;
     top: 205px;
     left: 367px;
@@ -11,16 +11,12 @@
     flex-direction: column;
     flex-wrap: wrap;
     padding-top: 15px;
-    /* padding: auto; */
-    /* align-items: left; */
     justify-content: left;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 
-
-
 }
-.note-card {
+.tweet-card {
     margin-bottom: 15px;
     width: 600px;
     padding: 0;
@@ -30,28 +26,22 @@
     background-color: #343A40;
 }
 
-.note-card .header {
+.tweet-card .header {
     display: flex;
     justify-content: space-between;
     padding: 0;
     margin: 0;
 
 }
-/* .note-card .header button{
-    padding: 0 0.6rem;
-    margin: 0 .2rem;
-    font-size: 1.5rem;
-    font-weight: bolder;
-    border: none;
-    background-color: #f8d4c4;
-} */
 
-.note-card .card-content {
+
+.tweet-card .card-content {
     color: #ffffff;
     padding: 1rem;
     font-size: 14px;
+    word-wrap: break-word;
 }
-.note-card h2 {
+.tweet-card h2 {
     font-size: 14px;
     padding-top: 0.5rem;
     padding-left: 0.8rem;
