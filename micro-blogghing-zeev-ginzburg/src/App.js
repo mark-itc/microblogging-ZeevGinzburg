@@ -1,39 +1,26 @@
 import './App.css';
 import Tweets from './components/tweets';
 import Form from './components/form';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-// localStorage.setItem("twit", JSON.stringify(t))
-// const t1 = JSON.parse(localStorage.getItem("twit"))
-// aplication localstorage
-
-
+let localSavedTweetItems;
 
 function App() {
-  const [tweetItems, setTweetItems] = useState([]);
-  const [opened, setOpened] = useState(null);
+  if (localSavedTweetItems === null) {
+  localStorage.setItem("localSavedTweetItems", JSON.stringify([]));}
+  localSavedTweetItems = JSON.parse(localStorage.getItem("localSavedTweetItems"));
+  let [tweetItems, setTweetItems] = useState(localSavedTweetItems);
+
+  localSavedTweetItems = localStorage.setItem("localSavedTweetItems", JSON.stringify(tweetItems));
+
   const addNewTweet = (newTweetItem) => {
     setTweetItems([...tweetItems, newTweetItem]);
   }
 
-  const deleteTweet = (tweetToDelete) => {
-    setTweetItems(tweetItems.filter((tweet) => {
-      if (tweet === tweetToDelete) {
-        return false;
-      }
-      else return true;
-    }));
-  }
-
-  const openTweet = (tweetToOpen) => {
-    setOpened(tweetToOpen);
-  }
-
-
   return (
     <div className="App">
-      <Form addNewTweet={addNewTweet}  />
-      <Tweets tweetItems={tweetItems} deleteTweet={deleteTweet} openTweet={openTweet}/>
+      <Form addNewTweet={addNewTweet} />
+      <Tweets tweetItems={tweetItems}  />
     </div>
   );
 }

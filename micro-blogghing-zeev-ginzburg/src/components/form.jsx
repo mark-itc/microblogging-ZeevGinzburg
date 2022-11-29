@@ -1,4 +1,4 @@
-import AddButton from "./add-button";
+import TweetButton from "./tweet-button";
 import "./form.css"
 import { useState } from "react";
 
@@ -7,7 +7,6 @@ function Form(props){
     const {addNewTweet} = props;
     const [tweetText, setTweetText] = useState("");
     
-
     const changeTweetText = (e) => {
         setTweetText(e.target.value);
     }
@@ -16,10 +15,9 @@ function Form(props){
         <form className="main-form" action="">
             <textarea value={tweetText} onChange={changeTweetText} cols="30" rows="10" placeholder="What you have in mind..."></textarea>
             <>{tweetText.length > 140 ? <div className="chars-warning">The tweet can't contain more then 140 chars.</div> : <div className="no-chars-warning"></div> }   </>
-            <AddButton addNewTweet={addNewTweet} setTweetText={setTweetText} tweetText={tweetText}/>
+            <TweetButton addNewTweet={addNewTweet} setTweetText={setTweetText} tweetText={tweetText} />
         </form>
     )
-
 }
 
 export default Form;

@@ -1,7 +1,6 @@
 .App {
-  background-color: #15202B;
+   background-color: inherit;
   text-align: center;
-  height: 100vh;
 }
 
 .App-header {
