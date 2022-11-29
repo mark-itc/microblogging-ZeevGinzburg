@@ -9,8 +9,8 @@
     display: grid;
     grid-template: 4fr 1fr / 512px 68px;
     column-gap: 10px;
+    row-gap: 2px;
     flex-direction: column;
-    margin: auto;
     margin-top: 1.5rem;
     border: 2px solid #CCCCCC;
     border-radius: 6px;
@@ -34,8 +34,9 @@ form textarea {
     order: 0;
     grid-column: 1 / 3;
     border: none;
-
+    letter-spacing: 0.08rem;
 }
+
 div.chars-warning {
     background: #F8D7DA;
     border: 1px solid #F5C6CB;

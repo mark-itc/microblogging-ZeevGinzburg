@@ -1,7 +1,6 @@
-import { useState } from "react";
 import "./buttons.css";
 
-function AddButton(props) {
+function TweetButton(props) {
     const {addNewTweet, tweetText, setTweetText} = props;
 
     function addTweet(e) {
@@ -17,10 +16,9 @@ function AddButton(props) {
 
     return (
         <>
-            <button disabled={tweetText.length > 140 || tweetText.length === 0} className="add-button" onClick={addTweet}>Tweet</button>
+            <button disabled={tweetText.length > 140 || tweetText.length === 0} className="tweet-button" onClick={addTweet}>Tweet</button>
         </>
     )
-
 }
 
-export default AddButton;
+export default TweetButton;

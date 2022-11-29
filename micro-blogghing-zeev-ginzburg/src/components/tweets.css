@@ -7,15 +7,12 @@
     position: absolute;
     top: 205px;
     left: 367px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: grid;
     padding-top: 15px;
-    justify-content: left;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-
 }
+
 .tweet-card {
     margin-bottom: 15px;
     width: 600px;
@@ -31,21 +28,20 @@
     justify-content: space-between;
     padding: 0;
     margin: 0;
-
+    color: #6C757D;
 }
-
 
 .tweet-card .card-content {
     color: #ffffff;
     padding: 1rem;
     font-size: 14px;
     word-wrap: break-word;
+    letter-spacing: 0.08rem;
 }
+
 .tweet-card h2 {
     font-size: 14px;
     padding-top: 0.5rem;
     padding-left: 0.8rem;
-    color: #6C757D;
     font-weight: 400;
-
 }

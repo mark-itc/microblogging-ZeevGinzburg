@@ -2,44 +2,43 @@ import "./tweets.css"
 
 
 function Tweets(props) {
-    const { tweetItems, openTweet } = props;
-
+    const { tweetItems } = props;
     const humanReadebleDate = (date) => {
-        const day = date.getDate();
-        const month = date.getMonth() + 1;
-        const year = date.getFullYear();
-        const hour = date.getHours();
-        const minute = date.getMinutes();
-        const second = date.getSeconds();
-
-
+        let dateForTransform = new Date(date)
+        const day = dateForTransform.getDate();
+        const month = dateForTransform.getMonth() + 1;
+        const year = dateForTransform.getFullYear();
+        const hour = dateForTransform.getHours();
+        const minute = dateForTransform.getMinutes();
+        const second = dateForTransform.getSeconds();
 
         return (
-            `${day}/${month}/${year} ${hour}:${minute} ${second}`
+            `${day}/${month}/${year} at ${hour}:${minute} ${second}`
         )
 
     }
 
 
-    return (<>
+
+    return (
+    <>
         <div className="tweet-div">
             {tweetItems.map((tweet) => (
-                <div className="tweet-card" onClick={() => { openTweet(tweet) }}>
+                <div className="tweet-card" style={{"order" : `${tweetItems.indexOf(tweet) * -1}`}} 
+                // onClick={() => { openTweet(tweet) }}
+                >
                     <div className="header">
                         <h2>{tweet.title}</h2>
-                        <p>{`tweet date: ${humanReadebleDate(tweet.date)}`}</p>
+                        <p>{`tweeted on: ${humanReadebleDate(tweet.date)}`}</p>
                     </div>
                     <div className="card-content">
                         <p>{tweet.text}</p>
                     </div>
                 </div>
-            ))}
+            ))}  
         </div>
-
     </>
-
     )
-
 }
 
 export default Tweets;

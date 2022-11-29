@@ -3,7 +3,8 @@
     margin: 0;
     padding: 0;
 }
-button.add-button {
+
+ button.tweet-button {
     width: 68px;
     height: 34px;
     font-size: 16px;
@@ -14,10 +15,7 @@ button.add-button {
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
     order: 2;
-
-
-
 }
-button.add-button:disabled {
+button.tweet-button:disabled {
     background-color: gray;
 }
