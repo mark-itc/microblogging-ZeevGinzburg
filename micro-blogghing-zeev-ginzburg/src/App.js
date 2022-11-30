@@ -1,9 +1,11 @@
 import './App.css';
+import { createBrowserRouter, RouterProvider, Route, Routes } from "react-router-dom";
 import Tweets from './components/tweets';
 import Form from './components/form';
 import { useState, useEffect } from "react";
 import { sort } from 'fast-sort';
-
+import UserProfile from './components/pages/user-profile';
+import Navbar from './components/navbar';
 
 function App() {
 const serverURL = 'https://micro-blogging-dot-full-stack-course-services.ew.r.appspot.com/tweet';
@@ -19,7 +21,7 @@ async function addNewTweet(newTweet){
     body: JSON.stringify(newTweet)
    })
    loadTweets();
-  //  console.log(loading);
+   console.log(loading);
 
 }
 
@@ -41,17 +43,32 @@ useEffect(()=>{
   loadTweets()
 },[]);
 const tweetItemsSortedByDate = sort(tweetItems).desc(tweet => new Date(tweet.date));
+
+const router = createBrowserRouter([
+  {
+    path: "/userprofile",
+    element: <UserProfile />
+  },
+  {
+    path: "/",
+    element: <App />
+  },
+]);
   
+
   return (
     <div className="App">
       {loading && <div>Loading ...</div>}
       {!loading &&
         <div>
+          {/* <Navbar /> */}
           <Form addNewTweet={addNewTweet} serverURL={serverURL}/>
           <Tweets tweetItemsSortedByDate={tweetItemsSortedByDate}  />
         </div>
+        
       }
-    </div>
+        <RouterProvider router={router} />
+      </div>
   );
 }
 

@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+div.main-user-profile-div {
+    background-color: #ffffff;
+    height: 500px;
+    width: 500px;
+    border: 5px solid saddlebrown;
+
+
+}
