@@ -17,10 +17,14 @@
     font-family: 'Roboto', sans-serif;
     color: #CCCCCC;
     font-size: 16px;
-    position: absolute;
+    /* position: absolute; */
+    margin: auto;
+    margin-top: 2rem;
     width: 600px;
     height: 180px;
-    left: 367px;
+    padding-bottom: 0.5rem;
+
+
     top: 5px;
 }
 form textarea {

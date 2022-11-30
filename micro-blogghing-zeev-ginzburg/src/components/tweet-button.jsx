@@ -1,14 +1,14 @@
 import "./buttons.css";
 
 function TweetButton(props) {
-    const {addNewTweet, tweetText, setTweetText} = props;
-
+    const {addNewTweet, tweetText, setTweetText, serverURL} = props;
+ 
     function addTweet(e) {
         e.preventDefault();
         const newTweetItem = {
-            text: tweetText,
+            content: tweetText,
             date: new Date(),
-            title: `user-name: Zeev Ginzburg`
+            userName: `user-name: Zeev Ginzburg`
         };
         addNewTweet(newTweetItem);
         setTweetText("");
