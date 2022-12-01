@@ -1,8 +1,9 @@
-import "./tweets.css"
+import "./tweets.css";
+import { sort } from 'fast-sort';
 
 
 function Tweets(props) {
-    const { tweetItems } = props;
+    const { tweetItemsSortedByDate } = props;
     const humanReadebleDate = (date) => {
         let dateForTransform = new Date(date)
         const day = dateForTransform.getDate();
@@ -15,24 +16,22 @@ function Tweets(props) {
         return (
             `${day}/${month}/${year} at ${hour}:${minute} ${second}`
         )
-
     }
-
 
 
     return (
     <>
         <div className="tweet-div">
-            {tweetItems.map((tweet) => (
-                <div className="tweet-card" style={{"order" : `${tweetItems.indexOf(tweet) * -1}`}} 
-                // onClick={() => { openTweet(tweet) }}
+            {tweetItemsSortedByDate.map((tweet) => (
+                <div className="tweet-card" 
+                // style={{"order" : `${tweetItemsSortedByDate.indexOf(tweet) * -1}`}} 
                 >
                     <div className="header">
-                        <h2>{tweet.title}</h2>
+                        <h2>{tweet.userName}</h2>
                         <p>{`tweeted on: ${humanReadebleDate(tweet.date)}`}</p>
                     </div>
                     <div className="card-content">
-                        <p>{tweet.text}</p>
+                        <p>{tweet.content}</p>
                     </div>
                 </div>
             ))}  
