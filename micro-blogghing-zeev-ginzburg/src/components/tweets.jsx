@@ -1,5 +1,4 @@
 import "./tweets.css";
-import { sort } from 'fast-sort';
 
 
 function Tweets(props) {

@@ -1,11 +1,8 @@
 import './App.css';
 import { createBrowserRouter, RouterProvider, Route, Routes } from "react-router-dom";
-import Tweets from './components/tweets';
-import Form from './components/form';
 import { useState, useEffect } from "react";
 import { sort } from 'fast-sort';
 import UserProfile from './components/pages/user-profile';
-import Navbar from './components/navbar';
 import HomePage from './components/pages/home-page';
 
 function App() {

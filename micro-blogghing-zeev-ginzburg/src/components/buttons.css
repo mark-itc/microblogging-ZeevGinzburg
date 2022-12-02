@@ -4,7 +4,7 @@
     padding: 0;
 }
 
- button.tweet-button {
+ button.tweet-button, button.save-user-name {
     width: 68px;
     height: 34px;
     font-size: 16px;
