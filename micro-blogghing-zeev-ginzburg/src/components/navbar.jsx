@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-// import './Navbar.css'
+import './navbar.css'
 
 function Navbar () {
   const activeClassName = 'viewed'
@@ -8,7 +8,7 @@ function Navbar () {
   return (
     <nav className='Navbar'>
       <ul>
-        {/* <li>
+        <li>
           <NavLink
             to='/'
             className={({ isActive }) =>
@@ -17,10 +17,10 @@ function Navbar () {
           >
             Home
           </NavLink>
-        </li> */}
+        </li>
         <li>
           <NavLink
-            to='/user-profile'
+            to='/userprofile'
             className={({ isActive }) =>
               isActive ? activeClassName : undefined
             }

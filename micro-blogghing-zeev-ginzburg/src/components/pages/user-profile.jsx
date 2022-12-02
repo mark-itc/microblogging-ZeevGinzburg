@@ -6,7 +6,7 @@ import Navbar from '../navbar';
   return (
   <div className='main-user-profile-div'>
     <Navbar />
-    <h2 style={{"color": "red"}}>user profile</h2>
+    <h2 style={{"color": "red"}}>user profile - test</h2>
     </div>
   );
 }
