@@ -8,7 +8,7 @@ function TweetButton(props) {
         const newTweetItem = {
             content: tweetText,
             date: new Date(),
-            userName: `user-name: Zeev Ginzburg`
+            userName: localStorage.getItem("localSavedUserName") || "Somebody",
         };
         addNewTweet(newTweetItem);
         setTweetText("");

@@ -23,7 +23,6 @@ function Tweets(props) {
         <div className="tweet-div">
             {tweetItemsSortedByDate.map((tweet) => (
                 <div className="tweet-card" 
-                // style={{"order" : `${tweetItemsSortedByDate.indexOf(tweet) * -1}`}} 
                 >
                     <div className="header">
                         <h2>{tweet.userName}</h2>
