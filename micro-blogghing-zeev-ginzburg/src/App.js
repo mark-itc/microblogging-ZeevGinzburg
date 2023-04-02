@@ -2,6 +2,7 @@ import './App.css';
 import { createBrowserRouter, RouterProvider, Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { sort } from 'fast-sort';
+// import Alert from './components/alert'
 import UserProfile from './components/pages/user-profile';
 import HomePage from './components/pages/home-page';
 
@@ -23,6 +24,8 @@ const router = createBrowserRouter([
     <div className="App">
           <RouterProvider router={router} />
       </div>
+   
+
   );
 }
 
